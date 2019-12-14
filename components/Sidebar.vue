@@ -3,7 +3,8 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">Shulk Discord Resources</div>
         <div class="list-group list-group-flush">
-            <a href="javascript:;" class="list-group-item list-group-item-action">Example<span class="material-icons badge badge-pill">Example</span></a>
+            <a href="javascript:;" v-on:click="changeActive" data-active="links" class="list-group-item list-group-item-action">Links<span class="material-icons badge badge-pill">Links</span></a>
+            <a href="javascript:;" v-on:click="changeActive" data-active="guides" class="list-group-item list-group-item-action">Guides<span class="material-icons badge badge-pill">Guides</span></a>
         </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -11,7 +12,11 @@
 
 <script>
 export default {
-
+  methods: {
+    changeActive(e) {
+      this.$state.commit("TOGGLE_ACTIVE",e.target.data("active"));
+    }
+  }
 }
 </script>
 
