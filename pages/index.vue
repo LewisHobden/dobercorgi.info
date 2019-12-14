@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">
-        shulk-discord-resources
+        {{ placeholder }}
       </h1>
       <h2 class="subtitle">
         Resource directory for the Shulk Discord.
@@ -32,6 +32,11 @@
 import Logo from '~/components/Logo.vue'
 
 export default {
+  asyncData() {
+    return {
+      placeholder: "Let's go"
+    }
+  },
   components: {
     Logo
   }

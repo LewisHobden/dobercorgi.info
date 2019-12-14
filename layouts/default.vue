@@ -1,8 +1,54 @@
 <template>
-  <div>
-    <nuxt />
-  </div>
+  <div class="d-flex" id="wrapper" v-bind:class="{ toggled: showMenu }">
+    <sidebar />
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <button class="btn" id="menu-toggle" v-on:click="toggleMenu">Toggle Menu</button>
+
+            <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        <nuxt />
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
 </template>
+
+<script>
+import Sidebar from '~/components/Sidebar.vue'
+
+export default {
+  computed: {
+    showMenu () {
+      return this.$store.state.showMenu
+    }
+  },
+  components: {
+    Sidebar
+  },
+  methods: {
+    toggleMenu(e) {
+      this.$store.commit("TOGGLE_MENU");
+    }
+  }
+}
+</script>
 
 <style>
 html {
