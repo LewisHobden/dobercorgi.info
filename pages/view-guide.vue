@@ -1,8 +1,16 @@
 <template>
 <div class="content">
-  <h1>Homepage</h1>
-  <marquee>It's not worth preambling here probably.</marquee>
-</div>
+  <div class="row" v-if="activeData">
+      <div class="col-sm-6" v-bind:key="index" v-for="(item, index) in activeData">
+          <card :guide=item />  
+      </div>
+  </div>
+
+  <div class="alert alert-warning" v-else>
+      No data here currently!
+  </div>
+
+  </div>
 </template>
 
 <script>

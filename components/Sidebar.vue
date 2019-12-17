@@ -2,9 +2,11 @@
      <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">Shulk Discord Resources</div>
-        <div class="list-group list-group-flush">
-            <a href="javascript:;" v-on:click="changeActive" data-active="links" class="list-group-item list-group-item-action">Links<span class="material-icons badge badge-pill">Links</span></a>
-            <a href="javascript:;" v-on:click="changeActive" data-active="guides" class="list-group-item list-group-item-action">Guides<span class="material-icons badge badge-pill">Guides</span></a>
+        <div class="list-group list-group-flush" v-bind:key="index" v-for="(category, index) in categories">
+            <a href="javascript:;" v-on:click="changeActive" v-bind:data-active="category.category" v-bind:class="{ active: checkIsActive(category.category) }" class="list-group-item list-group-item-action">
+              <span class="material-icons badge badge-pill">{{ category.categoryIcon }}</span>
+              {{ category.category }}
+            </a>
         </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -12,9 +14,20 @@
 
 <script>
 export default {
+  computed: {
+    categories() {
+      return this.$store.state.guides.meta.categories;
+    },
+    active() {
+      return this.$store.state.active;
+    }
+  },
   methods: {
     changeActive(e) {
-      this.$state.commit("TOGGLE_ACTIVE",e.target.data("active"));
+      this.$store.commit("CHANGE_ACTIVE",e.target.getAttribute("data-active"));
+    },
+    checkIsActive(category) {
+      return this.active === category;
     }
   }
 }
@@ -70,4 +83,15 @@ body {
     margin-left: -15rem;
   }
 }
+
+.material-icons
+{
+  font-family: 'Material Icons', serif;
+}
+
+.material-icons.badge
+{
+  font-size: 1em;
+}
+
 </style>

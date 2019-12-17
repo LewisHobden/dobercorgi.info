@@ -1,6 +1,6 @@
 export const state = () => ({
     showMenu: true,
-    active: "links"
+    active: "Guides"
 });
 
 export const mutations = {

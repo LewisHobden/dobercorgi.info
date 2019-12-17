@@ -9,12 +9,12 @@ export const state = () => {
         {"category": "Advanced", "categoryIcon": "highlight", "categoryDescription": "Advanced techniques."},
       ]
     },
-    "links": [
+    "Links": [
       {"title": "Ultimate Frame Data", "text": "A website that provides some sweet frame data for Smultimate.","url": "https://ultimateframedata.com"},
       {"title": "Training Modpack", "text": "With supporting text below as a natural lead-in to additional content.","url": "https://ultimateframedata.com"},
       {"title": "Training Modpack", "text": "With supporting text below as a natural lead-in to additional content.","url": "https://ultimateframedata.com"}
     ],
-    "guides": [
+    "Guides": [
       {"title": "ewgFrame Data", "text": "A website that provides some sweet frame data for Smultimate.","url": "https://ultimateframedata.com"},
       {"title": "Trarwebe Modpack", "text": "With supporting text below as a natural lead-in to additional content.","url": "https://ultimateframedata.com"},
       {"title": "TrainingfgrwgModpack", "text": "With supporting text below as a natural lead-in to additional content.","url": "https://ultimateframedata.com"}

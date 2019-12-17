@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex" id="wrapper" v-bind:class="{ toggled: showMenu }">
+  <div class="d-flex" id="wrapper" v-bind:class="{ toggled: !showMenu }">
     <sidebar />
 
     <!-- Page Content -->
@@ -7,21 +7,16 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
             <button class="btn" id="menu-toggle" v-on:click="toggleMenu">Toggle Menu</button>
 
-            <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <nuxt-link class="nav-link" to="/">Home page</nuxt-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <nuxt-link class="nav-link" to="/view-guide">Guides</nuxt-link>
                     </li>
                 </ul>
             </div>
-
         </nav>
         <nuxt />
     </div>

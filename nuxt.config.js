@@ -40,6 +40,7 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
+    'nuxt-material-design-icons'
   ],
   /*
   ** Build configuration
