@@ -35,6 +35,7 @@ export default {
       return this.guides[this.active];
     }
   },
+  transition: "default",
   layout: 'guides'
 }
 </script>
@@ -42,10 +43,5 @@ export default {
 <style>
 .content {
   padding: 20px;
-  
-  -webkit-transition: margin .25s ease-out;
-  -moz-transition: margin .25s ease-out;
-  -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
 }
 </style>

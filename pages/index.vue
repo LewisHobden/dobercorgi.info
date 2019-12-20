@@ -2,6 +2,7 @@
 <div class="content">
   <h1>Homepage</h1>
   <marquee>Website preamble</marquee>
+  <p>Use the links in the menu above to go to our guides.</p>
 </div>
 </template>
 
@@ -12,11 +13,12 @@ export default {
   components: {
     Card
   },
+  transition: "default",
   computed: {
     guides () {
       return this.$store.state.guides;
     },
-    active () {
+    acve () {
       return this.$store.state.active
     },
     activeData () {
@@ -29,10 +31,5 @@ export default {
 <style>
 .content {
   padding: 20px;
-  
-  -webkit-transition: margin .25s ease-out;
-  -moz-transition: margin .25s ease-out;
-  -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
 }
 </style>
