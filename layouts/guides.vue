@@ -1,18 +1,22 @@
 <template>
   <div class="d-flex" id="wrapper" v-bind:class="{ toggled: !showMenu }">
+    <sidebar />
+
     <!-- Page Content -->
     <div id="page-content-wrapper">
-        <b-navbar toggleable="sm" type="light" variant="light" align="right">
-          <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
-          <b-navbar-brand>Shulk Discord Resources</b-navbar-brand>
+    
+    <b-navbar toggleable="lg" type="light" variant="light">
+    <button class="btn btn-outline-info" v-on:click="toggleMenu"><span class="navbar-toggler-icon"></span></button>
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-          <b-collapse id="nav-text-collapse" is-nav right>
-            <b-navbar-nav align="end">
-              <b-nav-item to="/" right>Home</b-nav-item>
-              <b-nav-item to="/view-guide" right>Guides</b-nav-item>
-            </b-navbar-nav>
-          </b-collapse>
-        </b-navbar>
+    <b-collapse id="nav-collapse" is-nav>
+      <!-- Right aligned nav items -->
+      <b-navbar-nav class="ml-auto">
+        <b-nav-item to="/" right>Home</b-nav-item>
+        <b-nav-item to="/view-guides" active right>Guides</b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
         <nuxt />
     </div>
     <!-- /#page-content-wrapper -->
@@ -21,11 +25,16 @@
 </template>
 
 <script>
+import Sidebar from '~/components/Sidebar.vue'
+
 export default {
   computed: {
     showMenu () {
       return this.$store.state.showMenu
     }
+  },
+  components: {
+    Sidebar
   },
   methods: {
     toggleMenu(e) {

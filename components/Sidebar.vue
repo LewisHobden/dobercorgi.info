@@ -3,9 +3,9 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">Shulk Discord Resources</div>
         <div class="list-group list-group-flush" v-bind:key="index" v-for="(category, index) in categories">
-            <a href="javascript:;" v-on:click="changeActive" v-bind:data-active="category.category" v-bind:class="{ active: checkIsActive(category.category) }" class="list-group-item list-group-item-action">
+            <a href="javascript:;" @click="changeActive" v-bind:data-active="index" v-bind:class="{ active: checkIsActive(index) }" class="list-group-item list-group-item-action">
               <span class="material-icons badge badge-pill">{{ category.categoryIcon }}</span>
-              {{ category.category }}
+              {{ category.title }}
             </a>
         </div>
     </div>
@@ -16,7 +16,7 @@
 export default {
   computed: {
     categories() {
-      return this.$store.state.guides.meta.categories;
+      return this.$store.state.guides.categories;
     },
     active() {
       return this.$store.state.active;

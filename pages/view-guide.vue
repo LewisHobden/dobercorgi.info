@@ -1,8 +1,12 @@
 <template>
 <div class="content">
+  <div>
+    <h1>{{ activeData.title }}</h1>
+    <p>{{ activeData.description }}</p>
+  </div>
   <div class="row" v-if="activeData">
-      <div class="col-sm-6" v-bind:key="index" v-for="(item, index) in activeData">
-          <card :guide=item />  
+      <div class="col-sm-6" v-bind:key="index" v-for="(category, index) in activeData.items">
+          <card :guide=category />  
       </div>
   </div>
 
@@ -22,15 +26,16 @@ export default {
   },
   computed: {
     guides () {
-      return this.$store.state.guides;
+      return this.$store.state.guides.categories;
     },
     active () {
-      return this.$store.state.active
+      return this.$store.state.active;
     },
     activeData () {
       return this.guides[this.active];
     }
-  }
+  },
+  layout: 'guides'
 }
 </script>
 

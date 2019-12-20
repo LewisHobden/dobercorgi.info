@@ -1,7 +1,7 @@
 <template>
 <div class="content">
   <h1>Homepage</h1>
-  <marquee>It's not worth preambling here probably.</marquee>
+  <marquee>Website preamble</marquee>
 </div>
 </template>
 
