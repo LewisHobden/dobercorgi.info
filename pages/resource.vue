@@ -4,9 +4,9 @@
     <h1>{{ activeData.title }}</h1>
     <p>{{ activeData.description }}</p>
   </div>
-  <div class="row" v-if="activeData">
+  <div class="row" v-if="activeData.items.length">
       <div class="col-sm-6" v-bind:key="index" v-for="(category, index) in activeData.items">
-          <card :guide=category />  
+          <card :resource=category />  
       </div>
   </div>
 
@@ -25,18 +25,18 @@ export default {
     Card
   },
   computed: {
-    guides () {
-      return this.$store.state.guides.categories;
+    resources () {
+      return this.$store.state.resources.categories;
     },
     active () {
       return this.$store.state.active;
     },
     activeData () {
-      return this.guides[this.active];
+      return this.resources[this.active];
     }
   },
   transition: "default",
-  layout: 'guides'
+  layout: 'resources'
 }
 </script>
 

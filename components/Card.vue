@@ -1,10 +1,10 @@
 <template>
     <div class="card">
-        <img v-if="guide.imageUrl" class="card-img-top" :src=guide.imageUrl alt="Card image cap">
+        <img v-if="resource.imageUrl" class="card-img-top" :src=resource.imageUrl alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">{{ guide.title }}</h5>
-            <p class="card-text">{{ guide.text }}</p>
-            <a :href=guide.url target="_blank" class="btn btn-primary">Go There</a>
+            <h5 class="card-title">{{ resource.title }}</h5>
+            <p class="card-text">{{ resource.text }}</p>
+            <a :href=resource.url target="_blank" class="btn btn-primary">Go There</a>
         </div>
     </div>
 </template>
@@ -13,7 +13,7 @@
 export default {
     name: "Card",
     props: {
-        guide: {
+        resource: {
             type: Object,
             required: true
         }

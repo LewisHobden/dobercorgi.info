@@ -2,7 +2,7 @@
 <div class="content">
   <h1>Homepage</h1>
   <marquee>Website preamble</marquee>
-  <p>Use the links in the menu above to go to our guides.</p>
+  <p>Use the links in the menu above to go to our resources.</p>
 </div>
 </template>
 
@@ -15,14 +15,14 @@ export default {
   },
   transition: "default",
   computed: {
-    guides () {
-      return this.$store.state.guides;
+    resources () {
+      return this.$store.state.resources;
     },
     acve () {
       return this.$store.state.active
     },
     activeData () {
-      return this.guides[this.active];
+      return this.resources[this.active];
     }
   }
 }

@@ -16,7 +16,7 @@
 export default {
   computed: {
     categories() {
-      return this.$store.state.guides.categories;
+      return this.$store.state.resources.categories;
     },
     active() {
       return this.$store.state.active;

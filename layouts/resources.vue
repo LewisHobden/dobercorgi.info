@@ -6,14 +6,14 @@
     <div id="page-content-wrapper">
     
     <b-navbar toggleable="lg" type="light" variant="light">
-    <button class="btn btn-outline-info" v-on:click="toggleMenu"><span class="navbar-toggler-icon"></span></button>
+    <button class="btn btn-outline-info" v-on:click="toggleMenu">{{ getToggleCopy() }}</button>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <b-nav-item to="/" right>Home</b-nav-item>
-        <b-nav-item to="/view-guide" active right>Guides</b-nav-item>
+        <b-nav-item to="/resource" active right>Resources</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -39,6 +39,9 @@ export default {
   methods: {
     toggleMenu(e) {
       this.$store.commit("TOGGLE_MENU");
+    },
+    getToggleCopy() {
+      return (this.showMenu ? "Hide" : "Show") + " categories";
     }
   }
 }
