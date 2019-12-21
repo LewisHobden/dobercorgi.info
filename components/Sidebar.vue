@@ -1,12 +1,12 @@
 <template>
      <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">Shulk Discord Resources</div>
+        <div class="sidebar-heading">Resources</div>
         <div class="list-group list-group-flush" v-bind:key="index" v-for="(category, index) in categories">
-            <a href="javascript:;" @click="changeActive" v-bind:data-active="index" v-bind:class="{ active: checkIsActive(index) }" class="list-group-item list-group-item-action">
+            <nuxt-link v-bind:to="index" v-bind:data-active="index" v-bind:class="{ active: checkIsActive(index) }" class="list-group-item list-group-item-action">
               <span class="material-icons badge badge-pill">{{ category.categoryIcon }}</span>
               {{ category.title }}
-            </a>
+            </nuxt-link>
         </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -16,10 +16,10 @@
 export default {
   computed: {
     categories() {
-      return this.$store.state.resources.categories;
+      return this.$store.state.resources;
     },
     active() {
-      return this.$store.state.active;
+      return this.$route.params.category;
     }
   },
   methods: {

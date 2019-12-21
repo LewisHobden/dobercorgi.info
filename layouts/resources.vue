@@ -6,17 +6,17 @@
     <div id="page-content-wrapper">
     
     <b-navbar toggleable="lg" type="light" variant="light">
-    <button class="btn btn-outline-info" v-on:click="toggleMenu">{{ getToggleCopy() }}</button>
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <button class="btn btn-outline-info" v-on:click="toggleMenu">{{ getToggleCopy() }}</button>
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-    <b-collapse id="nav-collapse" is-nav>
-      <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
-        <b-nav-item to="/" right>Home</b-nav-item>
-        <b-nav-item to="/resource" active right>Resources</b-nav-item>
-      </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
+      <b-collapse id="nav-collapse" is-nav>
+        <!-- Right aligned nav items -->
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item to="/" right>Home</b-nav-item>
+          <b-nav-item to="/resource" active right>Resources</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
         <nuxt />
     </div>
     <!-- /#page-content-wrapper -->
