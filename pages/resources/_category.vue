@@ -38,7 +38,6 @@ export default {
       return this.resources[this.active];
     }
   },
-  transition: "default",
   layout: 'resources'
 }
 </script>

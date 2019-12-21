@@ -9,7 +9,6 @@
 
 <script>
 export default {
-  transition: "default",
   layout: 'resources'
 }
 </script>

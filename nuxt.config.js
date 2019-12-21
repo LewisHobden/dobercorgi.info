@@ -15,15 +15,6 @@ export default {
       //{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  layoutTransition: {
-    name: "layout",
-    mode: ""
-  },
-  /* Page Transitions */
-  pageTransition: {
-    name: "default",
-    mode: ""
-  },
   pwa: {
     manifest: {
       lang: 'en',

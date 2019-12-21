@@ -13,7 +13,6 @@ export default {
   components: {
     Card
   },
-  transition: "default",
   computed: {
     resources () {
       return this.$store.state.resources;
