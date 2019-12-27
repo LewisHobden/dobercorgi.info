@@ -4,6 +4,7 @@
   "description": "Resource directory for the Shulk Discord.",
   "author": "Lewis",
   "private": true,
+  "test" : {},
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
