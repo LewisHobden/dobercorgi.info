@@ -1,17 +1,34 @@
+image: docker:git
+services:
+  - docker:dind
 variables:
-  K8S_NAMESPACE: $CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG
- 
-stages:
-  - deploy
+  DOCKER_DRIVER: overlay
 
-deploy-k8s:
-  image: dtzar/helm-kubectl
+before_script:
+  - docker login -u gitlab-ci-token -p "$CI_BUILD_TOKEN" "$CI_REGISTRY"
+
+development:
   stage: deploy
-  before_script:
-    - apk add -u gettext
-    - kubectl create secret docker-registry regcred --docker-server=$CI_REGISTRY --docker-username="$CI_DEPLOY_USER" --docker-password="$CI_DEPLOY_PASSWORD" --docker-email="$GITLAB_USER_EMAIL" --dry-run=true -o yaml | kubectl apply -f -
-  environment: 
-    name: test
-    url: test.dobercorgi.info
   script:
-    - VERSION="${CI_COMMIT_TAG:-none}" envsubst < k8s.yml | kubectl apply -f -
+    - docker build -t "$CI_REGISTRY_IMAGE:latest" .
+    - docker push "$CI_REGISTRY_IMAGE:latest"
+  only:
+    - master
+
+testing:
+  stage: deploy
+  script:
+    - docker build -t "$CI_REGISTRY_IMAGE:${CI_COMMIT_REF_SLUG}" .
+    - docker push "$CI_REGISTRY_IMAGE:${CI_COMMIT_REF_SLUG}"
+  only:
+    - branches
+  except:
+    - master
+
+stable:
+  stage: deploy
+  script:
+    - docker build -t "$CI_REGISTRY_IMAGE:${CI_COMMIT_REF_SLUG}" .
+    - docker push "$CI_REGISTRY_IMAGE:${CI_COMMIT_REF_SLUG}"
+  only:
+    - tags
