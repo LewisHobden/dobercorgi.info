@@ -22,20 +22,20 @@ import Card from '~/components/Card.vue'
 
 export default {
   validate ({ params, query, store }) {  
-    return store.state.resources[params.category] !== undefined;
+    return store.state.categories[params.category] !== undefined;
   },
   components: {
     Card
   },
   computed: {
-    resources () {
-      return this.$store.state.resources;
+    categories () {
+      return this.$store.state.categories;
     },
     active () {
       return this.$route.params.category;
     },
     activeData () {
-      return this.resources[this.active];
+      return this.categories[this.active];
     }
   },
   layout: 'resources'

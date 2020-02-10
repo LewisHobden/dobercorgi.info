@@ -4,7 +4,7 @@
         <div class="sidebar-heading">Resources</div>
         <div class="list-group list-group-flush" v-bind:key="index" v-for="(category, index) in categories">
             <nuxt-link :to="'/resources/' + index " v-bind:data-active="index" v-bind:class="{ active: checkIsActive(index) }" class="list-group-item list-group-item-action">
-              <span class="material-icons badge badge-pill">{{ category.categoryIcon }}</span>
+              <span class="material-icons badge badge-pill">{{ category.icon }}</span>
               {{ category.title }}
             </nuxt-link>
         </div>
@@ -16,7 +16,7 @@
 export default {
   computed: {
     categories() {
-      return this.$store.state.resources;
+      return this.$store.state.categories;
     },
     active() {
       return this.$route.params.category;

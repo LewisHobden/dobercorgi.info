@@ -28,6 +28,10 @@ export default {
   ** Customize the progress-bar color
   */
   loading: { color: '#A93F55' },
+
+  router: {
+    middleware: 'resources'
+  },
   /*
   ** Global CSS
   */
@@ -52,7 +56,14 @@ export default {
     'bootstrap-vue/nuxt',
     'nuxt-material-design-icons',
     '@nuxtjs/pwa',
+    '@nuxtjs/axios'
   ],
+  
+  axios: {
+    // @todo Use an environment variable.
+    baseURL: "https://backend.dobercorgi.info"
+  },
+
   /*
   ** Build configuration
   */
