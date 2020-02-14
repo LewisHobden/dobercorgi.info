@@ -3,9 +3,9 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">Resources</div>
         <div class="list-group list-group-flush" v-bind:key="index" v-for="(category, index) in categories">
-            <nuxt-link :to="'/resources/' + index " v-bind:data-active="index" v-bind:class="{ active: checkIsActive(index) }" class="list-group-item list-group-item-action">
+            <nuxt-link :to="'/resources/' + index " v-bind:data-active="index" v-bind:class="{ active: checkIsActive(index) }" class="list-group-item d-flex list-group-item-action">
               <span class="material-icons badge badge-pill">{{ category.icon }}</span>
-              {{ category.title }}
+              <span>{{ category.title }}</span>
             </nuxt-link>
         </div>
     </div>
