@@ -1,9 +1,9 @@
 <template>
-<div>
+<div class="main-content">
   <div class="d-flex" id="wrapper" v-bind:class="{ toggled: !showMenu }">
     <!-- Page Content -->
     <div id="page-content-wrapper">
-        <b-navbar toggleable="sm" type="light" variant="light">
+        <b-navbar class="sticky-top" toggleable="sm" type="light" variant="light">
           <b-navbar-brand href="/">Dobercorgi</b-navbar-brand>
 
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -20,24 +20,23 @@
     </div>
     <!-- /#page-content-wrapper -->
 
-    <div class="dg-footer bg-light fixed-bottom d-flex justify-content-between">
-      <span>Theme: <button type="button" onclick="alert('Not yet implemented')" class="btn btn-light">Light</button></span>
-      <div class="btn-group">
-        <a href="https://twitter.com/ShulkDiscord" target="_blank" class="btn btn-secondary">Twitter</a>
-        <a href="https://discordapp.com/invite/NpXtA3f" target="_blank" class="btn btn-secondary">Discord</a>
-       </div>
-    </div>
+  <SiteFooter />    
   </div>
 </div>
 <!-- /#wrapper -->
 </template>
 
 <script>
+import SiteFooter from '~/components/SiteFooter.vue'
+
 export default {
   computed: {
     showMenu () {
       return this.$store.state.showMenu
     }
+  },
+  components: {
+    SiteFooter
   },
   methods: {
     toggleMenu(e) {
@@ -48,10 +47,6 @@ export default {
 </script>
 
 <style>
-.dg-footer {
-  padding: 20px 20% 20px;
-}
-
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -71,38 +66,7 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-
-@media (max-width: 480px) {
-  .dg-footer {
-    padding: 20px 20px 20px;
-  }
+.main-content {
+  margin-bottom: 20px;
 }
 </style>

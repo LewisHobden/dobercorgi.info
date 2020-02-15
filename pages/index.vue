@@ -4,6 +4,7 @@
     <div>
       <h1>Welcome</h1>
       <p>Welcome to Dobercorgi - a home for the Shulk Discord's resources.</p>
+      <nuxt-link class="btn btn-primary" to="/resources">Get Started</nuxt-link>
     </div>
     <img class="img-fluid img-thumbnail dg-site-logo" src="~assets/icon.png" />
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex" id="wrapper" v-bind:class="{ toggled: !showMenu }">
+  <div class="d-flex main-content" id="wrapper" v-bind:class="{ toggled: !showMenu }">
     <sidebar />
 
     <!-- Page Content -->
@@ -20,12 +20,14 @@
         <nuxt />
     </div>
     <!-- /#page-content-wrapper -->
+    <SiteFooter />
 </div>
 <!-- /#wrapper -->
 </template>
 
 <script>
 import Sidebar from '~/components/Sidebar.vue'
+import SiteFooter from '~/components/SiteFooter.vue'
 
 export default {
   computed: {
@@ -34,7 +36,7 @@ export default {
     }
   },
   components: {
-    Sidebar
+    Sidebar, SiteFooter
   },
   methods: {
     toggleMenu(e) {
@@ -67,33 +69,8 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+#page-content-wrapper {
+  margin-bottom: 30px;
 }
 
 @media(min-width: 480px) {
