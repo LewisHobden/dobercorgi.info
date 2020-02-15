@@ -11,7 +11,7 @@
           <b-collapse id="nav-collapse" is-nav>
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto">
-              <b-nav-item to="/" active right>Home</b-nav-item>
+              <b-nav-item to="/" right>Home</b-nav-item>
               <b-nav-item to="/resources" right>Resources</b-nav-item>
             </b-navbar-nav>
           </b-collapse>
@@ -21,7 +21,7 @@
     <!-- /#page-content-wrapper -->
 
     <div class="dg-footer bg-light fixed-bottom d-flex justify-content-between">
-      <span>Theme: <button type="button" class="btn btn-light">Light</button></span>
+      <span>Theme: <button type="button" onclick="alert('Not yet implemented')" class="btn btn-light">Light</button></span>
       <div class="btn-group">
         <a href="https://twitter.com/ShulkDiscord" target="_blank" class="btn btn-secondary">Twitter</a>
         <a href="https://discordapp.com/invite/NpXtA3f" target="_blank" class="btn btn-secondary">Discord</a>
