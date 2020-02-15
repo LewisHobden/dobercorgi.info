@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style>
-.content {
-  padding: 20px;
+.card {
+  margin-bottom: 12px;
 }
 </style>

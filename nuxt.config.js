@@ -36,7 +36,8 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/assets/main.css'
+    '~/assets/main.css',
+    '~/assets/theme.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -58,6 +59,11 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/axios'
   ],
+
+  bootstrapVue: {
+    bootstrapCSS: false, 
+    bootstrapVueCSS: false
+  },
   
   axios: {
     // @todo Use an environment variable.

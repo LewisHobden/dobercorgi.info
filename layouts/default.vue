@@ -1,8 +1,11 @@
 <template>
+<div>
   <div class="d-flex" id="wrapper" v-bind:class="{ toggled: !showMenu }">
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <b-navbar toggleable="sm" type="light" variant="light">
+          <b-navbar-brand href="/">Dobercorgi</b-navbar-brand>
+
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
           <b-collapse id="nav-collapse" is-nav>
@@ -16,6 +19,15 @@
         <nuxt />
     </div>
     <!-- /#page-content-wrapper -->
+
+    <div class="dg-footer bg-light fixed-bottom d-flex justify-content-between">
+      <span>Theme: <button type="button" class="btn btn-light">Light</button></span>
+      <div class="btn-group">
+        <a href="https://twitter.com/ShulkDiscord" target="_blank" class="btn btn-secondary">Twitter</a>
+        <a href="https://discordapp.com/invite/NpXtA3f" target="_blank" class="btn btn-secondary">Discord</a>
+       </div>
+    </div>
+  </div>
 </div>
 <!-- /#wrapper -->
 </template>
@@ -36,6 +48,10 @@ export default {
 </script>
 
 <style>
+.dg-footer {
+  padding: 20px 20% 20px;
+}
+
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -82,5 +98,11 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+@media (max-width: 480px) {
+  .dg-footer {
+    padding: 20px 20px 20px;
+  }
 }
 </style>

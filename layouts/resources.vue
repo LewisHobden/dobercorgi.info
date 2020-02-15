@@ -6,7 +6,7 @@
     <div id="page-content-wrapper">
     
     <b-navbar toggleable="lg" type="light" variant="light">
-      <button class="btn btn-outline-info" v-on:click="toggleMenu">{{ getToggleCopy() }}</button>
+      <button id="sidebar-toggle" class="btn btn-outline-info" v-on:click="toggleMenu">{{ getToggleCopy() }}</button>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
@@ -41,7 +41,7 @@ export default {
       this.$store.commit("TOGGLE_MENU");
     },
     getToggleCopy() {
-      return (this.showMenu ? "Hide" : "Show") + " categories";
+      return (this.showMenu ? "Show" : "Hide") + " categories";
     }
   }
 }
@@ -94,5 +94,11 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+@media(min-width: 480px) {
+  #sidebar-toggle {
+    display: none;
+  }
 }
 </style>
