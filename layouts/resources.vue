@@ -1,12 +1,12 @@
 <template>
-  <div class="d-flex" id="wrapper" v-bind:class="{ toggled: !showMenu }">
+  <div class="d-flex main-content" id="wrapper" v-bind:class="{ toggled: !showMenu }">
     <sidebar />
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
     
     <b-navbar toggleable="lg" type="light" variant="light">
-      <button class="btn btn-outline-info" v-on:click="toggleMenu">{{ getToggleCopy() }}</button>
+      <button id="sidebar-toggle" class="btn btn-outline-info" v-on:click="toggleMenu">{{ getToggleCopy() }}</button>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
@@ -20,12 +20,14 @@
         <nuxt />
     </div>
     <!-- /#page-content-wrapper -->
+    <SiteFooter />
 </div>
 <!-- /#wrapper -->
 </template>
 
 <script>
 import Sidebar from '~/components/Sidebar.vue'
+import SiteFooter from '~/components/SiteFooter.vue'
 
 export default {
   computed: {
@@ -34,14 +36,14 @@ export default {
     }
   },
   components: {
-    Sidebar
+    Sidebar, SiteFooter
   },
   methods: {
     toggleMenu(e) {
       this.$store.commit("TOGGLE_MENU");
     },
     getToggleCopy() {
-      return (this.showMenu ? "Hide" : "Show") + " categories";
+      return (this.showMenu ? "Show" : "Hide") + " categories";
     }
   }
 }
@@ -67,32 +69,13 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+#page-content-wrapper {
+  margin-bottom: 30px;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+@media(min-width: 480px) {
+  #sidebar-toggle {
+    display: none;
+  }
 }
 </style>

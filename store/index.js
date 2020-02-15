@@ -31,7 +31,7 @@ export const actions = {
     // @todo Cache categories on local storage.
     FETCH_CATEGORIES ({ commit, state }, {}) {
         // Don't load data multiple times.
-        if(state.categories.length)
+        if(state.categories && Object.keys(state.categories).length)
             return;
         
         return this.$axios.$get(`api/categories`).then((categories) => commit("SET_CATEGORIES",{ categories }));
