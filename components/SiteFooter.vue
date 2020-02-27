@@ -1,5 +1,5 @@
 <template>
-  <div class="dg-footer bg-light fixed-bottom d-flex justify-content-between">
+  <div class="dg-footer bg-light d-flex justify-content-between">
     <div class="dg-credit">
       <span>&copy; Shulk Discord</span><br />
       <span class="dg-version">Version: 1.0.0</span>

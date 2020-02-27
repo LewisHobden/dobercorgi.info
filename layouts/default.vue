@@ -19,9 +19,8 @@
         <nuxt />
     </div>
     <!-- /#page-content-wrapper -->
-
-  <SiteFooter />    
   </div>
+  <SiteFooter />
 </div>
 <!-- /#wrapper -->
 </template>
@@ -59,14 +58,10 @@ html {
   box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
 .main-content {
-  margin-bottom: 20px;
+  display: flex;
+  min-height: 100vh;
+  justify-content: space-between;
+  flex-direction: column;
 }
 </style>
