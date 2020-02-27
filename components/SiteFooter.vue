@@ -1,8 +1,8 @@
 <template>
-  <div class="dg-footer bg-light d-flex justify-content-between">
-    <div class="dg-credit">
+  <div class="dc-footer bg-light d-flex justify-content-between">
+    <div class="dc-credit">
       <span>&copy; Shulk Discord</span><br />
-      <span class="dg-version">Version: 1.0.0</span>
+      <span class="dc-version">Version: 1.0.0</span>
     </div>
     <div>
       <div class="btn-group">
@@ -14,18 +14,18 @@
 </template>
 
 <style>
-.dg-footer {
+.dc-footer {
   padding: 20px 20% 20px;
   font-size: 12px;
 }
 
-.dg-version {
+.dc-version {
   color: #969090;
   font-size: 10px;
 }
 
 @media (max-width: 480px) {
-  .dg-footer {
+  .dc-footer {
     padding: 20px 20px 20px;
   }
 }

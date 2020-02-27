@@ -3,7 +3,7 @@
     <img v-if="resource.imageUrl" class="card-img-top" :src=resource.imageUrl alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title">{{ resource.title }}</h5>
-        <h6 class="dg-card-subtext">{{ shortUrl(resource.action) }}</h6>
+        <h6 class="dc-card-subtext">{{ shortUrl(resource.action) }}</h6>
 
         <p class="card-text">{{ resource.content }}</p>
         <a :href=resource.action target="_blank" class="btn btn-primary">Go There</a>
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style>
-.dg-card-subtext {
+.dc-card-subtext {
     font-style: italic;
     font-size: 0.75rem;
 }
