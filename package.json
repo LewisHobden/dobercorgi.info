@@ -1,7 +1,7 @@
 {
   "name": "shulk-discord-resources",
-  "version": "1.0.0",
-  "description": "Resource directory for the Shulk Discord.",
+  "version": "1.1.0",
+  "description": "A site containing resources from the Shulk Discord to anyone looking to learn.",
   "author": "Lewis",
   "private": true,
   "test": {},

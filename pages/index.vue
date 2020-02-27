@@ -1,53 +1,54 @@
 <template>
-<div class="content dg-homepage-content">
-  <div class="dg-header">
+<div class="content dc-homepage-content">
+  <div class="dc-header">
     <div>
       <h1>Welcome</h1>
-      <p>Welcome to Dobercorgi - a home for the Shulk Discord's resources.</p>
-      <nuxt-link class="btn btn-primary" to="/resources">Get Started</nuxt-link>
+      <p>This is Dobercorgi - a home for the Shulk Discord's resources.</p>
+      <p>This project is a work in progress. If you have feedback or suggestions, please get in touch through the Shulk Discord.
+      <br />
+      In the meantime, add this app to your homescreen to get updates as they are released!</p>
+
+      <nuxt-link class="btn btn-primary dc-btn--cta" to="/resources">Get Started</nuxt-link>
     </div>
-    <img class="img-fluid img-thumbnail dg-site-logo" src="~assets/icon.png" />
+    <img class="img-fluid dc-site-logo" src="~assets/icon.png" />
   </div>
 
   <hr />
-  
-
 </div>
 </template>
 
-<script>
-export default {
-  
-}
-</script>
-
 <style>
-.dg-site-logo {
-  max-width: 150px;
+.dc-site-logo {
+  max-width: 20%;
   padding: 10px;
 }
 
-.dg-header {
+.dc-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 @media (max-width: 480px) {
-  .dg-header {
+  .dc-header {
     flex-direction: column-reverse;
   }
 
-  .dg-site-logo {
+  .dc-site-logo {
+    max-width: 50%;
+    padding: 10px;
+  }
+
+  .dc-site-logo {
     margin: 0 auto 30px;
   }
 
-  .dg-header h1 {
+  .dc-header h1 {
     text-align: center;
   }
-}
 
-.dg-homepage-content {
-  margin: 0 20%;
+  .dc-btn--cta {
+    display: block;
+  }
 }
 </style>

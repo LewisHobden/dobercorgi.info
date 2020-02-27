@@ -5,15 +5,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: "Shulk Discord Resources",
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: "A site containing resources from the Shulk Discord to aspiring pros."}
-    ],
-    link: [
-      //{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    title: "Shulk Discord Resources"
   },
   pwa: {
     manifest: {
@@ -22,6 +14,9 @@ export default {
       short_name: "Dobercorgi",
       display: 'standalone',
       theme_color: '#A93F55',
+    },
+    meta: {
+      ogImage: true
     }
   },
   /*
