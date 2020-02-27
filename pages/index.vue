@@ -4,9 +4,9 @@
     <div>
       <h1>Welcome</h1>
       <p>Welcome to Dobercorgi - a home for the Shulk Discord's resources.</p>
-      <nuxt-link class="btn btn-primary" to="/resources">Get Started</nuxt-link>
+      <nuxt-link class="btn btn-primary dg-btn--cta" to="/resources">Get Started</nuxt-link>
     </div>
-    <img class="img-fluid img-thumbnail dg-site-logo" src="~assets/icon.png" />
+    <img class="img-fluid dg-site-logo" src="~assets/icon.png" />
   </div>
 
   <hr />
@@ -14,12 +14,6 @@
 
 </div>
 </template>
-
-<script>
-export default {
-  
-}
-</script>
 
 <style>
 .dg-site-logo {
@@ -45,9 +39,9 @@ export default {
   .dg-header h1 {
     text-align: center;
   }
-}
 
-.dg-homepage-content {
-  margin: 0 20%;
+  .dg-btn--cta {
+    display: block;
+  }
 }
 </style>
