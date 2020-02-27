@@ -2,7 +2,7 @@
   <div class="dc-footer bg-light d-flex justify-content-between">
     <div class="dc-credit">
       <span>&copy; Shulk Discord</span><br />
-      <span class="dc-version">Version: 1.0.0</span>
+      <span class="dc-version">Version: {{ appVersion }}</span>
     </div>
     <div>
       <div class="btn-group">
@@ -12,6 +12,16 @@
       </div>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    appVersion() {
+      return this.$store.state.version;
+    }
+  }
+}
+</script>
 
 <style>
 .dc-footer {

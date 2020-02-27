@@ -1,9 +1,12 @@
 import Vue from 'vue'
 
+var PACKAGE = require('../package.json');
+
 export const state = () => {
     const s = {
         showMenu: true,
-        categories: {}
+        categories: {},
+        version: PACKAGE.version
     };
 
     return s;
