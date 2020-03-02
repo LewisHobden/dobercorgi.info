@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content" v-bind:class="{ toggled: !showMenu }">
+  <div class="main-content" id="wrapper" v-bind:class="{ toggled: !showMenu }">
     <div class="d-flex content-body">
       <sidebar />
       <div id="main-content">
@@ -30,7 +30,8 @@ import SiteFooter from '~/components/SiteFooter.vue'
 export default {
   computed: {
     showMenu () {
-      return this.$store.state.showMenu
+      console.log(this.$store.state.showMenu);
+      return this.$store.state.showMenu;
     }
   },
   components: {
