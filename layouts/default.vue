@@ -1,6 +1,6 @@
 <template>
 <div class="main-content">
-  <div class="d-flex" id="wrapper" v-bind:class="{ toggled: !showMenu }">
+  <div class="d-flex" id="wrapper">
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <b-navbar class="sticky-top" toggleable="sm" type="light" variant="light">
@@ -29,11 +29,6 @@
 import SiteFooter from '~/components/SiteFooter.vue'
 
 export default {
-  computed: {
-    showMenu () {
-      return this.$store.state.showMenu
-    }
-  },
   components: {
     SiteFooter
   },
