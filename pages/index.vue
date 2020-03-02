@@ -10,7 +10,7 @@
 
       <nuxt-link class="btn btn-primary dc-btn--cta" to="/resources">Get Started</nuxt-link>
     </div>
-    <img class="img-fluid dc-site-logo" src="~assets/icon.png" />
+    <img class="dc-site-logo" src="~assets/icon.png" />
   </div>
 
   <hr />
