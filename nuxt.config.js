@@ -5,7 +5,16 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: "Shulk Discord Resources"
+    title: "Shulk Discord Resources",
+    script: [
+      { 
+        async: true, 
+        defer: true, 
+        src: "https://plausible.io/js/plausible.js", 
+        hid: "Plausible", 
+        "data-domain": "dobercorgi.info"
+      }
+    ]
   },
   pwa: {
     manifest: {
