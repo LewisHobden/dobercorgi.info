@@ -9,10 +9,9 @@ export default {
     script: [
       { 
         async: true, 
-        defer: true, 
         src: "https://analytics.lewis.coffee/ackee.js", 
         "data-ackee-server": "https://analytics.lewis.coffee",
-        "ackee-domain-id": "ef648ef5-f2f3-466d-8ae3-f1952548ea14",
+        "data-ackee-domain-id": "ef648ef5-f2f3-466d-8ae3-f1952548ea14",
       }
     ]
   },
