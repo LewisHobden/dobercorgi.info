@@ -1,10 +1,11 @@
-# shulk-discord-resources
-
+# ![Dobercorgi](https://dobercorgi.fra1.digitaloceanspaces.com/dobercorgi/dobercorgi-128x128.png) Dobercorgi.info
 > Resource directory for the Shulk Discord.
 
-A one day project I did to convert a spreadsheet into a website.
+A quick exploration into a JAMstack project - collects data from the Resources API and shows it to the user as a progressive web app using Nuxt JS.
+You can check it out over at [dobercorgi.info](https://dobercorgi.info/)
 
 ## Build Setup
+Runs on Docker in production - run it using NPM and Nuxt.
 
 ``` bash
 # install dependencies
