@@ -1,0 +1,35 @@
+name: CI
+
+# Controls when the action will run. Triggers the workflow on release.
+on:
+  release:
+    types: [published]
+
+jobs:
+  CI:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+
+    - name: Install Dependencies
+      run: yarn install
+
+    - name: Run yarn build
+      run: yarn build
+
+    - name: Install doctl
+      uses: digitalocean/action-doctl@v2
+      with:
+        token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+
+    - name: Save Container Registry Config
+      run: doctl registry login
+
+    - name: Build Docker Container
+      run: docker build . -t registry.digitalocean.com/lewis/dobercorgi.info
+
+    - name: Push Container
+      run: docker push registry.digitalocean.com/lewis/dobercorgi.info
