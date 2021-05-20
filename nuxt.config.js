@@ -7,11 +7,11 @@ export default {
   head: {
     title: "Shulk Discord Resources",
     script: [
-      { 
-        async: true, 
-        src: "https://analytics.lewis.coffee/ackee.js", 
+      {
+        async: true,
+        src: "https://analytics.lewis.coffee/ackee.js",
         "data-ackee-server": "https://analytics.lewis.coffee",
-        "data-ackee-domain-id": "ef648ef5-f2f3-466d-8ae3-f1952548ea14",
+        "data-ackee-domain-id": "5e959a7a-9548-417a-b01d-09a02c32b240",
       }
     ]
   },
@@ -64,10 +64,10 @@ export default {
   ],
 
   bootstrapVue: {
-    bootstrapCSS: false, 
+    bootstrapCSS: false,
     bootstrapVueCSS: false
   },
-  
+
   axios: {
     // @todo Use an environment variable.
     baseURL: "https://backend.dobercorgi.info"
