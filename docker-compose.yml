@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+  nuxt:
+    container_name: dobercorgi-nuxtjs
+    image: node:15-buster
+    environment:
+      - HOST=0.0.0.0
+    ports:
+      - "80:3000"
+    volumes:
+      - ./:/app
+    command: ["tail", "/dev/null", "-f"]
