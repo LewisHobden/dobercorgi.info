@@ -1,0 +1,14 @@
+{
+  "$schema": "https://github.com/IBM/audit-ci/raw/main/docs/schema.json",
+  // Fail the deploy on any high or critical advisory, apart from the ones listed below.
+  "high": true,
+  "report-type": "summary",
+  "allowlist": [
+    // braces (via nitropack > globby > micromatch): ReDoS on attacker-supplied glob patterns.
+    // Only used to glob project files during the build, and no fixed version exists yet.
+    "GHSA-vfj7-8cjw-p6xm",
+    // node-forge (via nitropack > listhen): signature verification bypass.
+    // Only used for the dev server's self-signed HTTPS, never in the static output.
+    "GHSA-86w9-cpqp-85rv"
+  ]
+}

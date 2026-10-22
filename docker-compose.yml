@@ -1,13 +1,11 @@
-version: "3.4"
-
+# Development only - production is a static build deployed to GitHub Pages.
 services:
   nuxt:
     container_name: dobercorgi-nuxtjs
-    image: node:15-buster
-    environment:
-      - HOST=0.0.0.0
+    image: node:24-alpine
+    working_dir: /app
     ports:
-      - "80:3000"
+      - "3000:3000"
     volumes:
       - ./:/app
-    command: ["tail", "/dev/null", "-f"]
+    command: ["sh", "-c", "npm ci && npm run dev -- --host 0.0.0.0"]
