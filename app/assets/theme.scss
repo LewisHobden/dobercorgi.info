@@ -1,0 +1,9 @@
+// All of your custom SCSS variables go first
+$primary:       #af3840;
+$info:          #ad6368;
+$secondary:     #ffffff;
+$light:         #f1f1f1;
+$dark:          #000000;
+
+// then Bootstrap, so that it inherits the custom SCSS variables
+@import 'bootstrap/scss/bootstrap';
