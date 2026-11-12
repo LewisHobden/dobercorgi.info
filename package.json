@@ -18,13 +18,13 @@
   "dependencies": {
     "bootstrap": "^5.3.8",
     "material-icons": "^1.13.14",
-    "nuxt": "^4.6.2",
-    "vue": "^3.5.44",
+    "nuxt": "^4.6.4",
+    "vue": "^3.5.45",
     "vue-router": "^5.4.0"
   },
   "devDependencies": {
-    "@vite-pwa/assets-generator": "^1.0.4",
+    "@vite-pwa/assets-generator": "^2.0.0",
     "@vite-pwa/nuxt": "^1.1.1",
-    "sass": "^1.106.1"
+    "sass": "^1.108.1"
   }
 }
